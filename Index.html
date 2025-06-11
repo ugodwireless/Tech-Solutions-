@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <!-- SEO Meta Tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ugod Wireless Solutions | Same-Day Phone Repair in Suwanee, John's Creek</title>
+  <meta name="description" content="🚀 Mobile phone repair service in Suwanee, John's Creek & Lawrenceville. iPhone/Samsung screen/battery fixes. We come to you! Same-day service available.">
+  <meta name="keywords" content="iPhone repair Suwanee, Samsung screen repair John's Creek, sell my phone Lawrenceville, mobile phone repair near me">
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobilePhoneStore",
+    "name": "Ugod Wireless Solutions",
+    "image": "https://ugodwireless.com/logo.png",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Suwanee",
+      "addressRegion": "GA",
+      "postalCode": "30024"
+    },
+    "serviceArea": ["Suwanee", "John's Creek", "Lawrenceville"],
+    "openingHours": "Mo-Su 08:00-20:00",
+    "priceRange": "$",
+    "telephone": "+14045551234"
+  }
+  </script>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* === CSS (All Inline) === */
+    :root {
+      --primary: #FF6B00;
+      --secondary: #003366;
+      --bg-light: #ffffff;
+      --text-light: #333333;
+      --bg-dark: #121212;
+      --text-dark: #f0f0f0;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: var(--bg-light);
+      color: var(--text-light);
+      transition: all 0.3s;
+    }
+    body.dark-theme {
+      background: var(--bg-dark);
+      color: var(--text-dark);
+    }
+    .hero {
+      background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+      padding: 60px 20px;
+      text-align: center;
+      color: white;
+    }
+    .text-gradient {
+      background: linear-gradient(45deg, #FF6B00, #FF0080);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .pulse {
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    #phone-3d {
+      width: 300px;
+      height: 500px;
+      margin: 20px auto;
+    }
+    #repair-form {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <!-- Dark Mode Toggle -->
+  <button id="dark-mode-toggle" style="position: fixed; top: 20px; right: 20px; z-index: 1000;">🌓</button>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1><span class="text-gradient">STOP!</span> Broken Phone? <br>We Fix It <span style="color: var(--primary);">TODAY</span>.</h1>
+      <p>🔧 Same-Day Repairs | 💰 Top Cash for Your Device | 🚗 We Come to You</p>
+      <div style="margin: 20px 0;">
+        <button id="book-now" class="pulse" style="background: var(--primary); color: white; border: none; padding: 12px 24px; font-size: 18px; border-radius: 50px; cursor: pointer; margin-right: 10px;">Book Repair Now</button>
+        <button style="background: transparent; color: white; border: 2px solid white; padding: 12px 24px; font-size: 18px; border-radius: 50px; cursor: pointer;">Sell Your Phone</button>
+      </div>
+      <div style="display: flex; justify-content: center; gap: 15px; margin-top: 20px;">
+        <div style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px;">4.9★ (200+)</div>
+        <div style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px;">Price Match</div>
+        <div style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px;">Lifetime Warranty</div>
+      </div>
+    </div>
+    <!-- 3D Phone (Spline Embed) -->
+    <iframe id="phone-3d" src='https://my.spline.design/untitled-6e0b4518d8d8a8a5d0d4a4d4a4d4a4d4/' frameborder='0' width='100%' height='100%'></iframe>
+  </section>
+
+  <!-- Repair Form -->
+  <form id="repair-form">
+    <h2>Get a Quote</h2>
+    <div style="margin-bottom: 20px;">
+      <label style="display: block; margin-bottom: 8px; font-weight: 500;">Select Your Device</label>
+      <select id="device-select" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ddd;" required>
+        <option value="">-- Choose Brand --</option>
+        <option value="iphone">iPhone</option>
+        <option value="samsung">Samsung</option>
+        <option value="pixel">Google Pixel</option>
+      </select>
+    </div>
+    <div id="model-dropdown" style="margin-bottom: 20px; display: none;">
+      <label style="display: block; margin-bottom: 8px; font-weight: 500;">Model</label>
+      <select id="model-select" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ddd;" required>
+        <!-- Filled by JS -->
+      </select>
+    </div>
+    <div style="margin-bottom: 20px;">
+      <label style="display: block; margin-bottom: 8px; font-weight: 500;">Repair Needed</label>
+      <select id="repair-select" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ddd;" required>
+        <option value="">-- Select --</option>
+        <option data-price="89" value="screen">Screen Replacement</option>
+        <option data-price="59" value="battery">Battery Replacement</option>
+        <option data-price="49" value="charging">Charging Port</option>
+      </select>
+    </div>
+    <div style="margin-bottom: 20px; font-size: 18px;">
+      Estimated: <span id="repair-price" style="font-weight: 700;">$--</span>
+    </div>
+    <button type="submit" style="background: var(--primary); color: white; border: none; padding: 12px 24px; font-size: 18px; border-radius: 5px; cursor: pointer; width: 100%;">Continue to Payment</button>
+  </form>
+
+  <!-- Square Payment (Hidden Initially) -->
+  <div id="square-wallet" class="hidden" style="max-width: 600px; margin: 40px auto; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+    <h2>Secure Payment</h2>
+    <div id="square-card-container"></div>
+    <button id="square-pay" style="background: var(--primary); color: white; border: none; padding: 12px 24px; font-size: 18px; border-radius: 5px; cursor: pointer; width: 100%; margin-top: 20px;">Pay Now</button>
+  </div>
+
+  <!-- === JavaScript (All Inline) === -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <script>
+    // Dark Mode Toggle
+    document.getElementById('dark-mode-toggle').addEventListener('click', () => {
+      document.body.classList.toggle('dark-theme');
+    });
+
+    // Dynamic Repair Form
+    const deviceSelect = document.getElementById('device-select');
+    const modelDropdown = document.getElementById('model-dropdown');
+    const modelSelect = document.getElementById('model-select');
+    const repairSelect = document.getElementById('repair-select');
+    const priceDisplay = document.getElementById('repair-price');
+
+    deviceSelect.addEventListener('change', (e) => {
+      const models = {
+        iphone: ['iPhone 15', 'iPhone 14', 'iPhone 13'],
+        samsung: ['Galaxy S23', 'Galaxy S22', 'Galaxy A54'],
+        pixel: ['Pixel 8', 'Pixel 7', 'Pixel 6']
+      };
+      if (e.target.value) {
+        modelDropdown.style.display = 'block';
+        modelSelect.innerHTML = models[e.target.value].map(model => 
+          `<option value="${model.toLowerCase()}">${model}</option>`
+        ).join('');
+      } else {
+        modelDropdown.style.display = 'none';
+      }
+    });
+
+    repairSelect.addEventListener('change', (e) => {
+      const price = e.target.selectedOptions[0]?.dataset.price || '--';
+      priceDisplay.textContent = `$${price}`;
+    });
+
+    // Form Submission (Square)
+    document.getElementById('repair-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      document.getElementById('square-wallet').classList.remove('hidden');
+      // Load Square JS (replace with your sandbox/prod ID)
+      const squareScript = document.createElement('script');
+      squareScript.src = 'https://sandbox.web.squarecdn.com/v1/square.js';
+      squareScript.onload = () => {
+        const payments = Square.payments('YOUR_SANDBOX_APP_ID', 'YOUR_LOCATION_ID');
+        payments.card().then(card => {
+          card.attach('#square-card-container');
+          document.getElementById('square-pay').addEventListener('click', () => {
+            card.tokenize().then(token => {
+              console.log('Payment token:', token);
+              // Send token to your backend
+            });
+          });
+        });
+      };
+      document.head.appendChild(squareScript);
+    });
+
+    // GSAP Animations
+    gsap.from(".hero-content h1", { 
+      opacity: 0, y: 50, duration: 1 
+    });
+    gsap.to("#phone-3d", {
+      rotationY: 20,
+      scrollTrigger: {
+        trigger: ".hero",
+        scrub: true,
+      },
+    });
+  </script>
+</body>
+</html>
