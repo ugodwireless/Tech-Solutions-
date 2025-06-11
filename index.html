@@ -4,9 +4,10 @@
   <!-- SEO Meta Tags -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ugod Wireless Solutions | Same-Day Phone Repair in Suwanee, John's Creek</title>
-  <meta name="description" content="🚀 Mobile phone repair service in Suwanee, John's Creek & Lawrenceville. iPhone/Samsung screen/battery fixes. We come to you! Same-day service available.">
-  <meta name="keywords" content="iPhone repair Suwanee, Samsung screen repair John's Creek, sell my phone Lawrenceville, mobile phone repair near me">
+  <title>Ugod Wireless Solutions | Same-Day Phone Repair in Suwanee, John's Creek & Lawrenceville</title>
+  <meta name="description" content="🚀 Georgia's premier mobile repair service! We come to you for iPhone 17-15, Galaxy S25-S20 & all device repairs. Same-day service, top-dollar buybacks & eco-friendly recycling. Serving Suwanee, John's Creek, Lawrenceville since 2018.">
+  <meta name="keywords" content="iPhone 17 repair Suwanee, Galaxy S25 screen replacement John's Creek, sell my phone Lawrenceville, same-day mobile repair near me, eco-friendly phone recycling Gwinnett">
+  
   <!-- Schema.org -->
   <script type="application/ld+json">
   {
@@ -20,360 +21,657 @@
       "addressRegion": "GA",
       "postalCode": "30024"
     },
-    "serviceArea": ["Suwanee", "John's Creek", "Lawrenceville"],
-    "openingHours": "Mo-Su 08:00-20:00",
-    "priceRange": "$",
+    "serviceArea": {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": "34.0515",
+        "longitude": "-84.0713"
+      },
+      "geoRadius": "15000",
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "GA",
+        "addressLocality": "Suwanee, John's Creek, Lawrenceville, Duluth, Alpharetta"
+      }
+    },
+    "openingHours": "Mo-Su 07:00-22:00",
+    "priceRange": "$50-$500",
     "telephone": "+14045551234"
   }
   </script>
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
   <style>
-    /* === CSS (All Inline) === */
+    /* ===== GLOBAL STYLES ===== */
     :root {
       --primary: #FF6B00;
+      --primary-light: #FF9B50;
       --secondary: #003366;
-      --bg-light: #ffffff;
-      --text-light: #333333;
-      --bg-dark: #121212;
-      --text-dark: #f0f0f0;
+      --accent: #00C896;
+      --dark: #121212;
+      --light: #FFFFFF;
+      --gray: #F5F5F5;
+      --text: #333333;
+      --text-light: #777777;
     }
-    body {
-      font-family: 'Roboto', sans-serif;
+    
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      background: var(--bg-light);
-      color: var(--text-light);
-      transition: all 0.3s;
     }
+    
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--light);
+      transition: all 0.3s ease;
+    }
+    
     body.dark-theme {
-      background: var(--bg-dark);
-      color: var(--text-dark);
+      background-color: var(--dark);
+      color: var(--light);
     }
+    
+    h1, h2, h3, h4 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* ===== HERO SECTION ===== */
     .hero {
       background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
-      padding: 60px 20px;
-      text-align: center;
       color: white;
+      padding: 80px 0 120px;
+      position: relative;
+      overflow: hidden;
     }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+    
+    .hero p {
+      font-size: 1.5rem;
+      margin-bottom: 40px;
+      opacity: 0.9;
+    }
+    
     .text-gradient {
-      background: linear-gradient(45deg, #FF6B00, #FF0080);
+      background: linear-gradient(45deg, var(--primary-light), var(--accent));
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
-    .pulse {
-      animation: pulse 2s infinite;
+    
+    /* ===== TRUST BADGES ===== */
+    .trust-badges {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 40px;
+      flex-wrap: wrap;
     }
+    
+    .badge {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      padding: 12px 24px;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 500;
+    }
+    
+    /* ===== CTA BUTTONS ===== */
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 30px 0;
+      flex-wrap: wrap;
+    }
+    
+    .btn {
+      padding: 16px 32px;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+    }
+    
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      border: none;
+      box-shadow: 0 4px 15px rgba(255,107,0,0.3);
+    }
+    
+    .btn-primary:hover {
+      background: var(--primary-light);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(255,107,0,0.4);
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+    
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.1);
+      transform: translateY(-3px);
+    }
+    
+    /* ===== SERVICE INFO SECTION ===== */
+    .service-info {
+      padding: 80px 0;
+      background: var(--gray);
+    }
+    
+    .service-info.dark-theme {
+      background: #1A1A1A;
+    }
+    
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      margin-top: 40px;
+    }
+    
+    .info-card {
+      background: var(--light);
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+    
+    .dark-theme .info-card {
+      background: #222222;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    
+    .info-card:hover {
+      transform: translateY(-10px);
+    }
+    
+    .info-card i {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+    
+    .info-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+    
+    /* ===== REPAIR FORM ===== */
+    .repair-form-section {
+      padding: 80px 0;
+    }
+    
+    .form-container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--light);
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    
+    .dark-theme .form-container {
+      background: #222222;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2rem;
+      color: var(--primary);
+    }
+    
+    .form-group {
+      margin-bottom: 25px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: var(--text);
+    }
+    
+    .dark-theme .form-group label {
+      color: var(--light);
+    }
+    
+    .form-group select,
+    .form-group input {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+      background-color: var(--light);
+      color: var(--text);
+    }
+    
+    .dark-theme .form-group select,
+    .dark-theme .form-group input {
+      background-color: #333;
+      border-color: #444;
+      color: var(--light);
+    }
+    
+    select {
+      appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FF6B00'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      background-size: 24px;
+    }
+    
+    optgroup {
+      font-weight: bold;
+      color: var(--primary);
+    }
+    
+    button[type="submit"] {
+      width: 100%;
+      padding: 16px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 10px;
+    }
+    
+    button[type="submit"]:hover {
+      background: var(--primary-light);
+    }
+    
+    /* ===== SERVICE AREAS ===== */
+    .service-areas {
+      padding: 60px 0;
+      background: linear-gradient(135deg, var(--secondary) 0%, var(--dark) 100%);
+      color: white;
+      text-align: center;
+    }
+    
+    .service-areas h2 {
+      margin-bottom: 20px;
+    }
+    
+    .areas-grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 30px;
+    }
+    
+    .area-badge {
+      background: rgba(255,255,255,0.1);
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-weight: 500;
+    }
+    
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--dark);
+      color: var(--light);
+      padding: 40px 0;
+      text-align: center;
+    }
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 20px 0;
+      flex-wrap: wrap;
+    }
+    
+    .footer-links a {
+      color: var(--light);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+      color: var(--primary);
+    }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 20px 0;
+    }
+    
+    .social-links a {
+      color: var(--light);
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      color: var(--primary);
+    }
+    
+    /* ===== ANIMATIONS ===== */
     @keyframes pulse {
       0% { transform: scale(1); }
       50% { transform: scale(1.05); }
       100% { transform: scale(1); }
     }
-    #phone-3d {
-      width: 300px;
-      height: 500px;
-      margin: 20px auto;
+    
+    .pulse {
+      animation: pulse 2s infinite;
     }
-    #repair-form {
-      max-width: 600px;
-      margin: 40px auto;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
     }
-    .hidden { display: none; }
+    
+    .float {
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    /* ===== DARK MODE TOGGLE ===== */
+    .dark-mode-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+      background: rgba(0,0,0,0.2);
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: white;
+      font-size: 1.5rem;
+      backdrop-filter: blur(5px);
+      transition: all 0.3s ease;
+    }
+    
+    .dark-mode-toggle:hover {
+      background: rgba(0,0,0,0.3);
+      transform: scale(1.1);
+    }
+    
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero p {
+        font-size: 1.2rem;
+      }
+      
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .btn {
+        width: 100%;
+        max-width: 300px;
+      }
+      
+      .form-container {
+        padding: 30px 20px;
+      }
+    }
   </style>
 </head>
 <body>
   <!-- Dark Mode Toggle -->
-  <button id="dark-mode-toggle" style="position: fixed; top: 20px; right: 20px; z-index: 1000;">🌓</button>
+  <button class="dark-mode-toggle" id="dark-mode-toggle" aria-label="Toggle dark mode">
+    <i class="fas fa-moon"></i>
+  </button>
 
   <!-- Hero Section -->
   <section class="hero">
-    <div class="hero-content">
-      <h1><span class="text-gradient">STOP!</span> Broken Phone? <br>We Fix It <span style="color: var(--primary);">TODAY</span>.</h1>
-      <p>🔧 Same-Day Repairs | 💰 Top Cash for Your Device | 🚗 We Come to You</p>
-      <div style="margin: 20px 0;">
-        <button id="book-now" class="pulse" style="background: var(--primary); color: white; border: none; padding: 12px 24px; font-size: 18px; border-radius: 50px; cursor: pointer; margin-right: 10px;">Book Repair Now</button>
-        <button style="background: transparent; color: white; border: 2px solid white; padding: 12px 24px; font-size: 18px; border-radius: 50px; cursor: pointer;">Sell Your Phone</button>
+    <div class="hero-content container">
+      <h1><span class="text-gradient">Georgia's Favorite</span> Mobile Repair Service</h1>
+      <p>🚀 Same-day repairs at your doorstep • Top cash for your old devices • Eco-friendly recycling</p>
+      
+      <div class="cta-buttons">
+        <a href="#repair-form" class="btn btn-primary pulse">Book Repair Now</a>
+        <a href="#sell-options" class="btn btn-secondary">Sell Your Device</a>
       </div>
-      <div style="display: flex; justify-content: center; gap: 15px; margin-top: 20px;">
-        <div style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px;">4.9★ (200+)</div>
-        <div style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px;">Price Match</div>
-        <div style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px;">Lifetime Warranty</div>
+      
+      <div class="trust-badges">
+        <div class="badge"><i class="fas fa-star"></i> <span>4.9★ (200+ Reviews)</span></div>
+        <div class="badge"><i class="fas fa-bolt"></i> <span>Same-Day Service</span></div>
+        <div class="badge"><i class="fas fa-shield-alt"></i> <span>Lifetime Warranty</span></div>
       </div>
     </div>
-<lottie-player 
-  src="https://assets1.lottiefiles.com/packages/lf20_3rwasyjy.json" 
-  background="transparent" 
-  speed="1" 
-  style="width: 300px; height: 300px; margin: 0 auto;"
-  loop autoplay>
-</lottie-player>
-<!-- Add this script to <head> -->
-<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-  </sectiions >
-  <form id="repair-form">
-  <h2>Get Instant Quote</h2>
-  
-  <!-- Service Type -->
-  <div class="form-group">
-    <label>Service Type</label>
-    <select id="service-type" required>
-      <option value="">-- Select --</option>
-      <option value="repair">Repair</option>
-      <option value="sell">Sell/Trade-In</option>
-      <option value="recycle">Eco-Recycle</option>
-      <option value="diagnostic">AI Diagnostic ($29)</option>
-    </select>
-  </div>
-
-  <!-- Repair Options -->
-  <div id="repair-options">
-    <!-- 2025 Device Brands -->
-    <div class="form-group">
-      <label>Device Brand</label>
-      <select id="device-brand" required>
-        <option value="">-- Select --</option>
-        <option value="iphone">iPhone</option>
-        <option value="samsung">Samsung</option>
-        <option value="google">Google Pixel</option>
-        <option value="oneplus">OnePlus</option>
-        <option value="motorola">Motorola</option>
-        <option value="huawei">Huawei</option>
-        <option value="foldables">Foldables</option>
-        <option value="other">Other</option>
-      </select>
-    </div>
-
-    <!-- 2025 Device Models -->
-    <div class="form-group">
-      <label>Device Model</label>
-      <select id="device-model" required disabled>
-        <option value="">-- Select --</option>
-        <!-- Filled by JS -->
-      </select>
-    </div>
-
-    <!-- 2025 Repair Types -->
-    <div class="form-group">
-      <label>Repair Needed</label>
-      <select id="repair-type" required>
-        <option value="">-- Select --</option>
-        <optgroup label="Common Repairs">
-          <option value="screen">Screen Replacement</option>
-          <option value="battery">Battery Replacement</option>
-          <option value="charging">Quantum Charging Port</option>
-        </optgroup>
-        <optgroup label="Advanced Repairs">
-          <option value="backglass">Ceramic Shield Back Glass</option>
-          <option value="folding">Foldable Screen/Hinge</option>
-          <option value="thermal">Overheating Issues</option>
-          <option value="5g">5G/6G Antenna</option>
-        </optgroup>
-        <option value="other">Other Issue</option>
-      </select>
-    </div>
-  </div>
-
-  <!-- 2025 Sell/Trade-In Options -->
-  <div id="sell-options" style="display:none;">
-    <div class="form-group">
-      <label>Device Condition</label>
-      <select id="device-condition" required>
-        <option value="">-- Select --</option>
-        <option value="flawless">Like New (2025 Standards)</option>
-        <option value="good">Minor Wear (Scratch-resistant models)</option>
-        <option value="cracked">Cracked (Self-healing display models)</option>
-        <option value="broken">Not Working (2023+ models only)</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label>Trade-In Bonus?</label>
-      <select id="trade-in">
-        <option value="none">No Trade-In</option>
-        <option value="2025">For 2025 Devices (+15%)</option>
-        <option value="foldable">Foldable Bonus (+25%)</option>
-      </select>
-    </div>
-  </div>
-
-  <!-- Universal Fields -->
-  <div class="form-group">
-    <label>ZIP Code</label>
-    <input type="text" id="zip-code" placeholder="30024" required>
-  </div>
-  <button type="submit">Get 2025 Quote</button>
-  </form> 
-
-  <!-- Square Payment (Hidden Initially) -->
-  <div id="square-wallet" class="hidden" style="max-width: 600px; margin: 40px auto; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-    <h2>Secure Payment</h2>
-    <div id="square-card-container"></div>
-    <button id="square-pay" style="background: var(--primary); color: white; border: none; padding: 12px 24px; font-size: 18px; border-radius: 5px; cursor: pointer; width: 100%; margin-top: 20px;">Pay Now</button>
-  </div>
-
-  <!-- === JavaScript (All Inline) === -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-  <script>
-    // Dark Mode Toggle
-    document.getElementById('dark-mode-toggle').addEventListener('click', () => {
-      document.body.classList.toggle('dark-theme');
-    });
-
-    // Dynamic Repair Form
-    const deviceSelect = document.getElementById('device-select');
-    const modelDropdown = document.getElementById('model-dropdown');
-    const modelSelect = document.getElementById('model-select');
-    const repairSelect = document.getElementById('repair-select');
-    const priceDisplay = document.getElementById('repair-price');
-
-    deviceSelect.addEventListener('change', (e) => {
-      const models = {
-        iphone: ['iPhone 15', 'iPhone 14', 'iPhone 13'],
-        samsung: ['Galaxy S23', 'Galaxy S22', 'Galaxy A54'],
-        pixel: ['Pixel 8', 'Pixel 7', 'Pixel 6']
-      };
-      if (e.target.value) {
-        modelDropdown.style.display = 'block';
-        modelSelect.innerHTML = models[e.target.value].map(model => 
-          `<option value="${model.toLowerCase()}">${model}</option>`
-        ).join('');
-      } else {
-        modelDropdown.style.display = 'none';
-      }
-    });
-
-    repairSelect.addEventListener('change', (e) => {
-      const price = e.target.selectedOptions[0]?.dataset.price || '--';
-      priceDisplay.textContent = `$${price}`;
-    });
-
-    // Form Submission (Square)
-    document.getElementById('repair-form').addEventListener('submit', (e) => {
-      e.preventDefault();
-      document.getElementById('square-wallet').classList.remove('hidden');
-      // Load Square JS (replace with your sandbox/prod ID)
-      const squareScript = document.createElement('script');
-      squareScript.src = 'https://sandbox.web.squarecdn.com/v1/square.js';
-      squareScript.onload = () => {
-        const payments = Square.payments('YOUR_SANDBOX_APP_ID', 'YOUR_LOCATION_ID');
-        payments.card().then(card => {
-          card.attach('#square-card-container');
-          document.getElementById('square-pay').addEventListener('click', () => {
-            card.tokenize().then(token => {
-              console.log('Payment token:', token);
-              // Send token to your backend
-            });
-          });
-        });
-      };
-      document.head.appendChild(squareScript);
-    });
-
-    // GSAP Animations
-    gsap.from(".hero-content h1", { 
-      opacity: 0, y: 50, duration: 1 
-    });
-    gsap.to("#phone-3d", {
-      rotationY: 20,
-      scrollTrigger: {
-        trigger: ".hero",
-        scrub: true,
-      },
-    });
-  </script> 
-    <!-- ==================== -->
-<!-- 2025 JAVASCRIPT UPDATES -->
-<!-- PASTE THIS RIGHT BEFORE </body> -->
-<script>
-  // 2025 Device Database - Replace old version with this
-  const deviceModels = {
-    iphone: [
-      "iPhone 17 Pro Max", "iPhone 17 Pro", "iPhone 17",
-      "iPhone 16 Pro Max", "iPhone 16 Pro", "iPhone 16",
-      "iPhone 15 Pro Max", "iPhone 15 Pro", "iPhone 15",
-      "iPhone SE (2025)"
-    ],
-    samsung: [
-      "Galaxy S25 Ultra", "Galaxy S25+", "Galaxy S25",
-      "Galaxy Z Fold 7", "Galaxy Z Flip 7",
-      "Galaxy A85 5G", "Galaxy A55 5G"
-    ],
-    google: [
-      "Pixel 10 Pro", "Pixel 10", 
-      "Pixel 9 Pro", "Pixel 9",
-      "Pixel Fold 2"
-    ],
-    foldables: [
-      "Oppo Find N5", "Xiaomi Mix Fold 4",
-      "Honor Magic V3", "Vivo X Fold 3"
-    ],
-    // ... other brands
-  };
-
-  // ===== SERVICE TYPE TOGGLE =====
-  document.getElementById('service-type').addEventListener('change', function() {
-    const serviceType = this.value;
-    document.getElementById('repair-options').style.display = 
-      serviceType === 'repair' ? 'block' : 'none';
-    document.getElementById('sell-options').style.display = 
-      serviceType === 'sell' ? 'block' : 'none';
     
-    // 2025 NEW: Handle AI Diagnostic selection
-    if (serviceType === 'diagnostic') {
-      alert("Our AI bot will contact you shortly for remote diagnosis!");
-    }
-  });
+    <!-- Background Animation -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; opacity: 0.1; pointer-events: none;">
+      <div style="position: absolute; top: 20%; left: 10%; animation: float 8s ease-in-out infinite;">
+        <i class="fas fa-mobile-alt" style="font-size: 5rem; color: white;"></i>
+      </div>
+      <div style="position: absolute; top: 60%; left: 80%; animation: float 6s ease-in-out infinite 2s;">
+        <i class="fas fa-tools" style="font-size: 4rem; color: white;"></i>
+      </div>
+      <div style="position: absolute; top: 30%; left: 70%; animation: float 7s ease-in-out infinite 1s;">
+        <i class="fas fa-battery-full" style="font-size: 6rem; color: white;"></i>
+      </div>
+    </div>
+  </section>
 
-  // ===== 2025 DYNAMIC MODEL LOADER =====
-  document.getElementById('device-brand').addEventListener('change', function() {
-    const brand = this.value;
-    const modelSelect = document.getElementById('device-model');
-    
-    modelSelect.innerHTML = '<option value="">-- Select Model --</option>';
-    modelSelect.disabled = !brand;
-    
-    // 2025 NEW: Special handling for foldables
-    if (brand === 'foldables') {
-      modelSelect.innerHTML += `
-        <optgroup label="Samsung Foldables">
-          <option value="zfold7">Galaxy Z Fold 7</option>
-          <option value="zflip7">Galaxy Z Flip 7</option>
-        </optgroup>
-        <optgroup label="Other Foldables">
-          <option value="pixelfold2">Pixel Fold 2</option>
-          <option value="oppon5">Oppo Find N5</option>
-        </optgroup>`;
-    } 
-    else if (brand && deviceModels[brand]) {
-      // Load standard models
-      deviceModels[brand].forEach(model => {
-        modelSelect.innerHTML += `<option value="${model.toLowerCase()}">${model}</option>`;
-      });
-    }
-  });
+  <!-- Service Info Section -->
+  <section class="service-info">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 10px;">Why Choose Ugod Wireless?</h2>
+      <p style="text-align: center; max-width: 800px; margin: 0 auto 40px; color: var(--text-light);">
+        We're not just another repair shop - we're your personal device concierge. From cracked screens to trade-ins, 
+        we handle it all with white-glove service right at your home or office.
+      </p>
+      
+      <div class="info-grid">
+        <div class="info-card">
+          <i class="fas fa-clock"></i>
+          <h3>Lightning-Fast Service</h3>
+          <p>Most repairs completed in under 45 minutes while you wait. Need it faster? Our same-day express service has you covered.</p>
+        </div>
+        
+        <div class="info-card">
+          <i class="fas fa-home"></i>
+          <h3>We Come To You</h3>
+          <p>No more waiting in repair shops. We service homes, offices, and even coffee shops across Gwinnett County.</p>
+        </div>
+        
+        <div class="info-card">
+          <i class="fas fa-dollar-sign"></i>
+          <h3>Best Prices Guaranteed</h3>
+          <p>We'll beat any legitimate quote by 10%. Plus get top dollar when you sell or trade-in your old devices.</p>
+        </div>
+        
+        <div class="info-card">
+          <i class="fas fa-leaf"></i>
+          <h3>Eco-Friendly</h3>
+          <p>We responsibly recycle every device that can't be repaired or sold, keeping e-waste out of landfills.</p>
+        </div>
+        
+        <div class="info-card">
+          <i class="fas fa-shield-alt"></i>
+          <h3>Certified Technicians</h3>
+          <p>Our team undergoes 200+ hours of training annually on the latest devices and repair techniques.</p>
+        </div>
+        
+        <div class="info-card">
+          <i class="fas fa-calendar-check"></i>
+          <h3>Flexible Scheduling</h3>
+          <p>Available 7 days a week from 7AM to 10PM. Book online in 60 seconds with real-time availability.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  // ===== 2025 NEW TRADE-IN CALCULATOR =====
-  document.getElementById('device-condition').addEventListener('change', function() {
-    const condition = this.value;
-    const tradeInSelect = document.getElementById('trade-in');
-    
-    if (condition === 'flawless') {
-      tradeInSelect.innerHTML = `
-        <option value="none">No Trade-In</option>
-        <option value="2025" selected>For 2025 Devices (+15%)</option>
-        <option value="foldable">Foldable Bonus (+25%)</option>`;
-    } else {
-      tradeInSelect.innerHTML = `
-        <option value="none" selected>No Trade-In</option>
-        <option value="2025">For 2025 Devices (+15%)</option>`;
-    }
-  });
-</script>
-<!-- END OF 2025 UPDATES -->
-<!-- ==================== -->
-</body> 
-</body>
-</html>
+  <!-- Repair Form Section -->
+  <section class="repair-form-section" id="repair-form">
+    <div class="container">
+      <div class="form-container">
+        <h2>Get Your Instant Quote</h2>
+        
+        <form id="repair-form">
+          <!-- Service Type -->
+          <div class="form-group">
+            <label>What service do you need today?</label>
+            <select id="service-type" required>
+              <option value="">-- Select Service --</option>
+              <option value="repair">Device Repair</option>
+              <option value="sell">Sell/Trade-In My Device</option>
+              <option value="recycle">Eco-Friendly Recycling</option>
+              <option value="diagnostic">Remote AI Diagnostic ($29)</option>
+            </select>
+          </div>
+
+          <!-- Repair Options -->
+          <div id="repair-options">
+            <!-- Device Brand -->
+            <div class="form-group">
+              <label>Device Brand</label>
+              <select id="device-brand" required>
+                <option value="">-- Select Brand --</option>
+                <option value="iphone">Apple iPhone</option>
+                <option value="samsung">Samsung Galaxy</option>
+                <option value="google">Google Pixel</option>
+                <option value="oneplus">OnePlus</option>
+                <option value="motorola">Motorola</option>
+                <option value="lg">LG</option>
+                <option value="huawei">Huawei</option>
+                <option value="foldables">Foldable Devices</option>
+                <option value="other">Other Brand</option>
+              </select>
+            </div>
+
+            <!-- Device Model (Dynamically loaded) -->
+            <div class="form-group">
+              <label>Device Model</label>
+              <select id="device-model" required disabled>
+                <option value="">-- Select Model --</option>
+                <!-- Filled by JavaScript -->
+              </select>
+            </div>
+
+            <!-- Repair Type -->
+            <div class="form-group">
+              <label>What's the issue?</label>
+              <select id="repair-type" required>
+                <option value="">-- Select Repair --</option>
+                <optgroup label="Common Repairs">
+                  <option value="screen">Screen Replacement</option>
+                  <option value="battery">Battery Replacement</option>
+                  <option value="charging">Charging Port Repair</option>
+                  <option value="backglass">Back Glass Replacement</option>
+                </optgroup>
+                <optgroup label="Advanced Repairs">
+                  <option value="camera">Camera Repair</option>
+                  <option value="water">Water Damage Repair</option>
+                  <option value="speaker">Speaker/Microphone</option>
+                  <option value="buttons">Button Repair</option>
+                </optgroup>
+                <optgroup label="Foldable Repairs">
+                  <option value="fold-screen">Foldable Screen</option>
+                  <option value="hinge">Hinge Mechanism</option>
+                </optgroup>
+                <option value="other">Other Issue</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Sell/Recycle Options -->
+          <div id="sell-options" style="display:none;">
+            <div class="form-group">
+              <label>Device Condition</label>
+              <select id="device-condition" required>
+                <option value="">-- Select Condition --</option>
+                <option value="flawless">Flawless (Like New)</option>
+                <option value="good">Good (Minor Wear)</option>
+                <option value="cracked">Cracked Screen</option>
+                <option value="broken">Not Working/Dead</option>
+                <option value="parts">For Parts Only</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label>Trade-In Option</label>
+              <select id="trade-in">
+                <option value="none">No Trade-In</option>
+                <option value="2025">For 2025 Devices (+15% Bonus)</option>
+                <option value="foldable">Foldable Bonus (+25%)</option>
+                <option value="multi">Multi-Device Discount</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label>Recycle Option</label>
+              <select id="recycle-option">
+                <option value="no">No Recycling</option>
+                <option value="yes" selected>Yes, Recycle Responsibly</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" id="name" placeholder="John Smith" required>
+          </div>
+          
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" id="email" placeholder="john@example.com" required>
+          </div>
+          
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" id
