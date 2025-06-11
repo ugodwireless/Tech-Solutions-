@@ -283,6 +283,97 @@
         scrub: true,
       },
     });
-  </script>
+  </script> 
+    <!-- ==================== -->
+<!-- 2025 JAVASCRIPT UPDATES -->
+<!-- PASTE THIS RIGHT BEFORE </body> -->
+<script>
+  // 2025 Device Database - Replace old version with this
+  const deviceModels = {
+    iphone: [
+      "iPhone 17 Pro Max", "iPhone 17 Pro", "iPhone 17",
+      "iPhone 16 Pro Max", "iPhone 16 Pro", "iPhone 16",
+      "iPhone 15 Pro Max", "iPhone 15 Pro", "iPhone 15",
+      "iPhone SE (2025)"
+    ],
+    samsung: [
+      "Galaxy S25 Ultra", "Galaxy S25+", "Galaxy S25",
+      "Galaxy Z Fold 7", "Galaxy Z Flip 7",
+      "Galaxy A85 5G", "Galaxy A55 5G"
+    ],
+    google: [
+      "Pixel 10 Pro", "Pixel 10", 
+      "Pixel 9 Pro", "Pixel 9",
+      "Pixel Fold 2"
+    ],
+    foldables: [
+      "Oppo Find N5", "Xiaomi Mix Fold 4",
+      "Honor Magic V3", "Vivo X Fold 3"
+    ],
+    // ... other brands
+  };
+
+  // ===== SERVICE TYPE TOGGLE =====
+  document.getElementById('service-type').addEventListener('change', function() {
+    const serviceType = this.value;
+    document.getElementById('repair-options').style.display = 
+      serviceType === 'repair' ? 'block' : 'none';
+    document.getElementById('sell-options').style.display = 
+      serviceType === 'sell' ? 'block' : 'none';
+    
+    // 2025 NEW: Handle AI Diagnostic selection
+    if (serviceType === 'diagnostic') {
+      alert("Our AI bot will contact you shortly for remote diagnosis!");
+    }
+  });
+
+  // ===== 2025 DYNAMIC MODEL LOADER =====
+  document.getElementById('device-brand').addEventListener('change', function() {
+    const brand = this.value;
+    const modelSelect = document.getElementById('device-model');
+    
+    modelSelect.innerHTML = '<option value="">-- Select Model --</option>';
+    modelSelect.disabled = !brand;
+    
+    // 2025 NEW: Special handling for foldables
+    if (brand === 'foldables') {
+      modelSelect.innerHTML += `
+        <optgroup label="Samsung Foldables">
+          <option value="zfold7">Galaxy Z Fold 7</option>
+          <option value="zflip7">Galaxy Z Flip 7</option>
+        </optgroup>
+        <optgroup label="Other Foldables">
+          <option value="pixelfold2">Pixel Fold 2</option>
+          <option value="oppon5">Oppo Find N5</option>
+        </optgroup>`;
+    } 
+    else if (brand && deviceModels[brand]) {
+      // Load standard models
+      deviceModels[brand].forEach(model => {
+        modelSelect.innerHTML += `<option value="${model.toLowerCase()}">${model}</option>`;
+      });
+    }
+  });
+
+  // ===== 2025 NEW TRADE-IN CALCULATOR =====
+  document.getElementById('device-condition').addEventListener('change', function() {
+    const condition = this.value;
+    const tradeInSelect = document.getElementById('trade-in');
+    
+    if (condition === 'flawless') {
+      tradeInSelect.innerHTML = `
+        <option value="none">No Trade-In</option>
+        <option value="2025" selected>For 2025 Devices (+15%)</option>
+        <option value="foldable">Foldable Bonus (+25%)</option>`;
+    } else {
+      tradeInSelect.innerHTML = `
+        <option value="none" selected>No Trade-In</option>
+        <option value="2025">For 2025 Devices (+15%)</option>`;
+    }
+  });
+</script>
+<!-- END OF 2025 UPDATES -->
+<!-- ==================== -->
+</body> 
 </body>
 </html>
