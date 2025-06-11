@@ -113,40 +113,99 @@
 </lottie-player>
 <!-- Add this script to <head> -->
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-  </section>
-
-  <!-- Repair Form -->
+  </sectiions >
   <form id="repair-form">
-    <h2>Get a Quote</h2>
-    <div style="margin-bottom: 20px;">
-      <label style="display: block; margin-bottom: 8px; font-weight: 500;">Select Your Device</label>
-      <select id="device-select" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ddd;" required>
-        <option value="">-- Choose Brand --</option>
+  <h2>Get Instant Quote</h2>
+  
+  <!-- Service Type -->
+  <div class="form-group">
+    <label>Service Type</label>
+    <select id="service-type" required>
+      <option value="">-- Select --</option>
+      <option value="repair">Repair</option>
+      <option value="sell">Sell/Trade-In</option>
+      <option value="recycle">Eco-Recycle</option>
+      <option value="diagnostic">AI Diagnostic ($29)</option>
+    </select>
+  </div>
+
+  <!-- Repair Options -->
+  <div id="repair-options">
+    <!-- 2025 Device Brands -->
+    <div class="form-group">
+      <label>Device Brand</label>
+      <select id="device-brand" required>
+        <option value="">-- Select --</option>
         <option value="iphone">iPhone</option>
         <option value="samsung">Samsung</option>
-        <option value="pixel">Google Pixel</option>
+        <option value="google">Google Pixel</option>
+        <option value="oneplus">OnePlus</option>
+        <option value="motorola">Motorola</option>
+        <option value="huawei">Huawei</option>
+        <option value="foldables">Foldables</option>
+        <option value="other">Other</option>
       </select>
     </div>
-    <div id="model-dropdown" style="margin-bottom: 20px; display: none;">
-      <label style="display: block; margin-bottom: 8px; font-weight: 500;">Model</label>
-      <select id="model-select" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ddd;" required>
+
+    <!-- 2025 Device Models -->
+    <div class="form-group">
+      <label>Device Model</label>
+      <select id="device-model" required disabled>
+        <option value="">-- Select --</option>
         <!-- Filled by JS -->
       </select>
     </div>
-    <div style="margin-bottom: 20px;">
-      <label style="display: block; margin-bottom: 8px; font-weight: 500;">Repair Needed</label>
-      <select id="repair-select" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ddd;" required>
+
+    <!-- 2025 Repair Types -->
+    <div class="form-group">
+      <label>Repair Needed</label>
+      <select id="repair-type" required>
         <option value="">-- Select --</option>
-        <option data-price="89" value="screen">Screen Replacement</option>
-        <option data-price="59" value="battery">Battery Replacement</option>
-        <option data-price="49" value="charging">Charging Port</option>
+        <optgroup label="Common Repairs">
+          <option value="screen">Screen Replacement</option>
+          <option value="battery">Battery Replacement</option>
+          <option value="charging">Quantum Charging Port</option>
+        </optgroup>
+        <optgroup label="Advanced Repairs">
+          <option value="backglass">Ceramic Shield Back Glass</option>
+          <option value="folding">Foldable Screen/Hinge</option>
+          <option value="thermal">Overheating Issues</option>
+          <option value="5g">5G/6G Antenna</option>
+        </optgroup>
+        <option value="other">Other Issue</option>
       </select>
     </div>
-    <div style="margin-bottom: 20px; font-size: 18px;">
-      Estimated: <span id="repair-price" style="font-weight: 700;">$--</span>
+  </div>
+
+  <!-- 2025 Sell/Trade-In Options -->
+  <div id="sell-options" style="display:none;">
+    <div class="form-group">
+      <label>Device Condition</label>
+      <select id="device-condition" required>
+        <option value="">-- Select --</option>
+        <option value="flawless">Like New (2025 Standards)</option>
+        <option value="good">Minor Wear (Scratch-resistant models)</option>
+        <option value="cracked">Cracked (Self-healing display models)</option>
+        <option value="broken">Not Working (2023+ models only)</option>
+      </select>
     </div>
-    <button type="submit" style="background: var(--primary); color: white; border: none; padding: 12px 24px; font-size: 18px; border-radius: 5px; cursor: pointer; width: 100%;">Continue to Payment</button>
-  </form>
+    <div class="form-group">
+      <label>Trade-In Bonus?</label>
+      <select id="trade-in">
+        <option value="none">No Trade-In</option>
+        <option value="2025">For 2025 Devices (+15%)</option>
+        <option value="foldable">Foldable Bonus (+25%)</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Universal Fields -->
+  <div class="form-group">
+    <label>ZIP Code</label>
+    <input type="text" id="zip-code" placeholder="30024" required>
+  </div>
+  <button type="submit">Get 2025 Quote</button>
+  </form> 
 
   <!-- Square Payment (Hidden Initially) -->
   <div id="square-wallet" class="hidden" style="max-width: 600px; margin: 40px auto; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
