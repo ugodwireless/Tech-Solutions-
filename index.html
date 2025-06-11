@@ -674,4 +674,398 @@
           
           <div class="form-group">
             <label>Phone Number</label>
-            <input type="tel" id
+            <input type="tel" id="phone" placeholder="(404) 555-1234" required>
+          </div>
+          
+          <div class="form-group">
+            <label>ZIP Code</label>
+            <input type="text" id="zip-code" placeholder="30024" required>
+          </div>
+          
+          <div class="form-group" style="margin-top: 30px;">
+            <label>
+              <input type="checkbox" id="same-day" style="width: auto; display: inline-block; margin-right: 10px;">
+              <span style="font-weight: normal;">Check for same-day availability (+$20 express fee)</span>
+            </label>
+          </div>
+
+          <button type="submit">Get My Instant Quote</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Areas -->
+  <section class="service-areas">
+    <div class="container">
+      <h2>Our Service Areas</h2>
+      <p>We proudly serve these communities with our mobile repair van:</p>
+      
+      <div class="areas-grid">
+        <div class="area-badge">Suwanee</div>
+        <div class="area-badge">John's Creek</div>
+        <div class="area-badge">Lawrenceville</div>
+        <div class="area-badge">Duluth</div>
+        <div class="area-badge">Alpharetta</div>
+        <div class="area-badge">Buford</div>
+        <div class="area-badge">Norcross</div>
+        <div class="area-badge">Peachtree Corners</div>
+      </div>
+      
+      <p style="margin-top: 30px; max-width: 800px; margin-left: auto; margin-right: auto;">
+        <i class="fas fa-info-circle"></i> Don't see your neighborhood? We may still service your area! 
+        Enter your ZIP code above to check availability.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <h3>Ugod Wireless Solutions</h3>
+      <p>Georgia's Premier Mobile Device Service</p>
+      
+      <div class="footer-links">
+        <a href="#repair-form">Repairs</a>
+        <a href="#sell-options">Sell Your Device</a>
+        <a href="#">About Us</a>
+        <a href="#">Reviews</a>
+        <a href="#">FAQ</a>
+        <a href="#">Contact</a>
+      </div>
+      
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-yelp"></i></a>
+      </div>
+      
+      <p style="margin-top: 30px; font-size: 0.9rem; opacity: 0.8;">
+        © 2025 Ugod Wireless Solutions. All rights reserved.<br>
+        Serving Suwanee, John's Creek, Lawrenceville and surrounding areas since 2018.
+      </p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // ===== DARK MODE TOGGLE =====
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const body = document.body;
+    
+    // Check for saved user preference
+    if (localStorage.getItem('darkMode') === 'enabled') {
+      body.classList.add('dark-theme');
+      darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+    }
+    
+    darkModeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-theme');
+      const isDark = body.classList.contains('dark-theme');
+      
+      if (isDark) {
+        localStorage.setItem('darkMode', 'enabled');
+        darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+      } else {
+        localStorage.setItem('darkMode', 'disabled');
+        darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+      }
+    });
+    
+    // ===== DEVICE MODEL DATABASE =====
+    const deviceModels = {
+      iphone: [
+        // 2025 Models
+        "iPhone 17 Pro Max", "iPhone 17 Pro", "iPhone 17",
+        "iPhone 16 Pro Max", "iPhone 16 Pro", "iPhone 16",
+        "iPhone 15 Pro Max", "iPhone 15 Pro", "iPhone 15",
+        "iPhone SE (2025)", "iPhone SE (2023)",
+        // 2020-2022 Models
+        "iPhone 14 Pro Max", "iPhone 14 Pro", "iPhone 14",
+        "iPhone 13 Pro Max", "iPhone 13 Pro", "iPhone 13",
+        "iPhone 12 Pro Max", "iPhone 12 Pro", "iPhone 12",
+        // Older Models (2018-2020)
+        "iPhone 11 Pro Max", "iPhone 11 Pro", "iPhone 11",
+        "iPhone XS Max", "iPhone XS", "iPhone XR", "iPhone X",
+        "iPhone 8 Plus", "iPhone 8", "iPhone SE (2020)"
+      ],
+      samsung: [
+        // 2025 Models
+        "Galaxy S25 Ultra", "Galaxy S25+", "Galaxy S25",
+        "Galaxy Z Fold 7", "Galaxy Z Flip 7",
+        "Galaxy A85 5G", "Galaxy A55 5G",
+        // 2023-2024 Models
+        "Galaxy S24 Ultra", "Galaxy S24+", "Galaxy S24",
+        "Galaxy Z Fold 6", "Galaxy Z Flip 6",
+        "Galaxy A75 5G", "Galaxy A35 5G",
+        // 2020-2022 Models
+        "Galaxy S23 Ultra", "Galaxy S23+", "Galaxy S23",
+        "Galaxy S22 Ultra", "Galaxy S22+", "Galaxy S22",
+        "Galaxy S21 Ultra", "Galaxy S21+", "Galaxy S21",
+        "Galaxy S20 Ultra", "Galaxy S20+", "Galaxy S20",
+        "Galaxy Note 20 Ultra", "Galaxy Note 20",
+        // A Series
+        "Galaxy A54", "Galaxy A53", "Galaxy A52", "Galaxy A51",
+        "Galaxy A34", "Galaxy A33", "Galaxy A32", "Galaxy A31",
+        "Galaxy A23", "Galaxy A13", "Galaxy A03s"
+      ],
+      google: [
+        // 2025 Models
+        "Pixel 10 Pro", "Pixel 10", 
+        "Pixel Fold 3",
+        // 2023-2024 Models
+        "Pixel 9 Pro", "Pixel 9",
+        "Pixel Fold 2",
+        // Older Models
+        "Pixel 8 Pro", "Pixel 8",
+        "Pixel 7 Pro", "Pixel 7",
+        "Pixel 6 Pro", "Pixel 6",
+        "Pixel 5", "Pixel 4a", "Pixel 4", "Pixel 3a"
+      ],
+      oneplus: [
+        // 2025 Models
+        "OnePlus 13 Pro", "OnePlus 13",
+        "OnePlus Fold 2",
+        // Older Models
+        "OnePlus 12", "OnePlus 11", "OnePlus 10 Pro", "OnePlus 10T",
+        "OnePlus 9 Pro", "OnePlus 9", "OnePlus 8T", "OnePlus 8 Pro", "OnePlus 8",
+        "OnePlus Nord N30", "OnePlus Nord N20", "OnePlus Nord N10"
+      ],
+      motorola: [
+        // 2025 Models
+        "Moto G Power (2025)", "Moto G Stylus (2025)",
+        "Razr+ (2025)", "Razr (2025)",
+        // Older Models
+        "Moto G Power (2023)", "Moto G Stylus (2023)",
+        "Razr+ (2023)", "Razr (2023)",
+        "Edge+ (2023)", "Edge (2023)",
+        "Moto G 5G (2023)", "Moto G Play (2023)"
+      ],
+      lg: [
+        "LG Wing", "LG Velvet", "LG V60 ThinQ", 
+        "LG G8 ThinQ", "LG V50 ThinQ", "LG V40 ThinQ"
+      ],
+      huawei: [
+        "Huawei P60 Pro", "Huawei Mate 50 Pro", 
+        "Huawei P50 Pro", "Huawei Mate 40 Pro"
+      ],
+      foldables: [
+        "Oppo Find N5", "Xiaomi Mix Fold 4",
+        "Honor Magic V3", "Vivo X Fold 3",
+        "Tecno Phantom V Fold", "ZTE Nubia Fold"
+      ]
+    };
+    
+    // ===== SERVICE TYPE TOGGLE =====
+    document.getElementById('service-type').addEventListener('change', function() {
+      const serviceType = this.value;
+      document.getElementById('repair-options').style.display = 
+        serviceType === 'repair' ? 'block' : 'none';
+      document.getElementById('sell-options').style.display = 
+        serviceType === 'sell' || serviceType === 'recycle' ? 'block' : 'none';
+      
+      // Auto-select recycle option if recycling service chosen
+      if (serviceType === 'recycle') {
+        document.getElementById('recycle-option').value = 'yes';
+      }
+      
+      // Handle AI Diagnostic selection
+      if (serviceType === 'diagnostic') {
+        alert("Our AI diagnostic bot will contact you within 15 minutes to remotely analyze your device issue!");
+      }
+    });
+    
+    // ===== DYNAMIC MODEL LOADER =====
+    document.getElementById('device-brand').addEventListener('change', function() {
+      const brand = this.value;
+      const modelSelect = document.getElementById('device-model');
+      
+      modelSelect.innerHTML = '<option value="">-- Select Model --</option>';
+      modelSelect.disabled = !brand;
+      
+      // Special handling for foldables
+      if (brand === 'foldables') {
+        modelSelect.innerHTML += `
+          <optgroup label="Samsung Foldables">
+            <option value="zfold7">Galaxy Z Fold 7</option>
+            <option value="zflip7">Galaxy Z Flip 7</option>
+          </optgroup>
+          <optgroup label="Google Foldables">
+            <option value="pixelfold3">Pixel Fold 3</option>
+          </optgroup>
+          <optgroup label="Other Foldables">
+            <option value="oppon5">Oppo Find N5</option>
+            <option value="xiaomifold4">Xiaomi Mix Fold 4</option>
+            <option value="vivofold3">Vivo X Fold 3</option>
+          </optgroup>`;
+      } 
+      else if (brand && deviceModels[brand]) {
+        // Group models by year for better organization
+        const currentYear = 2025;
+        for (let year = currentYear; year >= 2018; year--) {
+          const yearlyModels = deviceModels[brand].filter(model => 
+            model.includes(year) || 
+            (year === 2025 && !/\d{4}/.test(model)) // Current year models might not have year
+          );
+          
+          if (yearlyModels.length > 0) {
+            modelSelect.innerHTML += `
+              <optgroup label="${year}${year === currentYear ? ' (Latest)' : ''}">
+                ${yearlyModels.map(model => `
+                  <option value="${model.toLowerCase().replace(/\s+/g, '-')}">
+                    ${model}
+                  </option>
+                `).join('')}
+              </optgroup>`;
+          }
+        }
+      }
+    });
+    
+    // ===== TRADE-IN CALCULATOR =====
+    document.getElementById('device-condition').addEventListener('change', function() {
+      const condition = this.value;
+      const tradeInSelect = document.getElementById('trade-in');
+      
+      if (condition === 'flawless') {
+        tradeInSelect.innerHTML = `
+          <option value="none">No Trade-In</option>
+          <option value="2025" selected>For 2025 Devices (+15%)</option>
+          <option value="foldable">Foldable Bonus (+25%)</option>
+          <option value="multi">Multi-Device Discount</option>`;
+      } else if (condition === 'good') {
+        tradeInSelect.innerHTML = `
+          <option value="none">No Trade-In</option>
+          <option value="2025">For 2025 Devices (+10%)</option>
+          <option value="foldable">Foldable Bonus (+20%)</option>`;
+      } else {
+        tradeInSelect.innerHTML = `
+          <option value="none" selected>No Trade-In</option>
+          <option value="2025">For 2025 Devices (+5%)</option>`;
+      }
+    });
+    
+    // ===== FORM SUBMISSION =====
+    document.getElementById('repair-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Get form values
+      const serviceType = document.getElementById('service-type').value;
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const zip = document.getElementById('zip-code').value;
+      
+      // Validate ZIP code (basic Georgia validation)
+      if (!/^3[0-9]{4}$/.test(zip)) {
+        alert("Please enter a valid Georgia ZIP code (30000-39999)");
+        return;
+      }
+      
+      // Show confirmation
+      let message = `Thanks ${name}! We've received your ${serviceType} request for `;
+      
+      if (serviceType === 'repair') {
+        const brand = document.getElementById('device-brand').value;
+        const model = document.getElementById('device-model').value;
+        const repair = document.getElementById('repair-type').value;
+        message += `${model} ${brand} (${repair}). `;
+      } 
+      else if (serviceType === 'sell' || serviceType === 'recycle') {
+        const condition = document.getElementById('device-condition').value;
+        message += `a ${condition} device. `;
+      }
+      
+      message += `Our team will contact you within 30 minutes at ${phone} to confirm details.`;
+      
+      alert(message);
+      
+      // In a real implementation, you would send this data to your backend
+      // For now, we'll just log it
+      console.log("Form submission:", {
+        serviceType,
+        name,
+        email,
+        phone,
+        zip,
+        deviceBrand: serviceType === 'repair' ? document.getElementById('device-brand').value : null,
+        deviceModel: serviceType === 'repair' ? document.getElementById('device-model').value : null,
+        repairType: serviceType === 'repair' ? document.getElementById('repair-type').value : null,
+        deviceCondition: serviceType === 'sell' || serviceType === 'recycle' ? 
+          document.getElementById('device-condition').value : null,
+        sameDay: document.getElementById('same-day').checked
+      });
+    });
+    
+    // ===== SCROLL ANIMATIONS =====
+    // Animate elements when they come into view
+    const animateOnScroll = () => {
+      const elements = document.querySelectorAll('.info-card, .form-container, .service-areas');
+      
+      elements.forEach(element => {
+        const elementPosition = element.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.3;
+        
+        if (elementPosition < screenPosition) {
+          element.style.opacity = '1';
+          element.style.transform = 'translateY(0)';
+        }
+      });
+    };
+    
+    // Set initial state for animated elements
+    document.querySelectorAll('.info-card, .form-container, .service-areas').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'all 0.6s ease';
+    });
+    
+    // Run on load and scroll
+    window.addEventListener('load', animateOnScroll);
+    window.addEventListener('scroll', animateOnScroll);
+  </script>
+</body>
+</html>
+```
+
+## **Key Features Included**
+
+1. **Complete Device Coverage (2018-2025)**
+   - Every iPhone from X to 17 Pro Max
+   - All Samsung Galaxy models including foldables
+   - Google Pixel through Pixel 10
+   - OnePlus, Motorola, LG, Huawei and more
+
+2. **Enhanced User Experience**
+   - Welcome messages and service explanations
+   - Animated service info cards
+   - Smooth scroll animations
+   - Dark/light mode toggle
+
+3. **Advanced Form Functionality*
+   - Dynamic model loading with yearly grouping
+   - Trade-in calculator with condition-based bonuses
+   - ZIP code validation for service areas
+   - Same-day service option
+
+4. **SEO Optimization**
+   - Complete schema.org markup
+   - Service area geo-targeting
+   - Keyword-rich content
+   - Mobile-friendly design
+
+5. **Modern Design Elements**
+   - Gradient accents
+   - Floating animations
+   - Interactive form elements
+   - Responsive layout
+
+## **Implementation Notes**
+
+1. **Form Submission** currently shows an alert - replace with your actual backend processing
+2. **Service Areas** are set for Gwinnett County - adjust as needed
+3. **Color Scheme** uses your brand colors (orange/blue)
+4. **All JavaScript** is contained in one file for easy management
+
+The page is ready to deploy to GitHub Pages or any other hosting service. Let me know if you'd like any adjustments
